@@ -1,3 +1,20 @@
 .main-menu {
-
+  display: flex;
+  justify-content: space-around;
+  
+  &__link {
+    text-align: center;
+    text-decoration: none;
+color:white;
+    margin-top: 50px;
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+    border: solid 2px white;
+    transition: 0.4s;
+    font-size: 20px;
+    &:hover {
+      border: solid 2px red;
+    }
+  }
 }
