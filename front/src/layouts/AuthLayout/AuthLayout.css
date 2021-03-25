@@ -1,13 +1,5 @@
 .auth-layout {
-  margin: 0;
-  padding: 0;
-height:100vh;
-background:#282828;
-color:white;
-font-family: 'Yanone Kaffeesatz', sans-serif;
   &__main {
-      
-    
     display: flex;
     justify-content: center;
     align-items: center;
