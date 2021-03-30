@@ -4,7 +4,6 @@
   align-items: center;
   &__title {
     font-size: 50px;
-
   }
   &__form {
     margin: 30px;
@@ -13,27 +12,5 @@
     flex-direction: column;
     align-items: center;
   }
-  &__input {
-    width: 250px;
-    height: 30px;
-    border: 2px gray solid;
-    border-radius: 5px;
-    margin-top: 10px;
-    font-size: 20px;
-  }
-  &__submit {
-      font-family: inherit;
-      font-size: 20px;
-    margin-top: 20px;
-    background: #AFEEEE;
-    border: none;
-    box-shadow: 0 0 3px;
-    border-radius: 5px;
-    width: 250px;
-    height: 25px;
-    transition: 0.3s;
-    &:hover {
-      background: lightgreen;
-    }
-  }
+  
 }
