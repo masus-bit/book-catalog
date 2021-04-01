@@ -13,9 +13,9 @@ export const AuthPage: React.FC<Props> = () => {
     <div className={b()}>
       <h3 className={b("title")}>Авторизация</h3>
       <form action="#" className={b("form")}>
-        <Input required={true} placeholder={'login'} type={'text'} mixClass={'login'}/>
-        <Input required={true} placeholder={'password'} type={'password'} mixClass={'password'}/>
-        <Button type={"submit"} text={'Войти'} /> 
+        <Input required={true} placeholder={'login'} htmlType={'text'} className={'login'}/>
+        <Input required={true} placeholder={'password'} htmlType={'password'} className={'password'}/>
+        <Button htmlType={"submit"} text={'Войти'} /> 
       </form>
     </div>
   );
