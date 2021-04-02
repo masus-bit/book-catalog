@@ -14,12 +14,14 @@ interface Props extends BaseComponentProps {
     error?: string;
     disabled?: boolean;
     value?: string;
+    name?:string
 }
 
 const b = block('input')
 
 export const Input: React.FC<Props> = ({ 
     value = '',
+    name,
     required = false,
     placeholder = '',
     htmlType = '',
@@ -42,7 +44,7 @@ export const Input: React.FC<Props> = ({
         <div className={b({}).mix(className)}>
             <div className={b('container')}>
             {!!label && <label className={b('label')}></label>}
-        <input value={currentValue} onChange={handlerChange} disabled={disabled}  required placeholder={placeholder} type={htmlType} className={b('input')}/>
+        <input value={currentValue} name={name} onChange={handlerChange} disabled={disabled}  required placeholder={placeholder} type={htmlType} className={b('input')}/>
        
         </div>
        {!!error && <p className={b('error')}>{error}</p>}

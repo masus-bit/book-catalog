@@ -83,6 +83,7 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.7",
+    "http-proxy-middleware": "^1.1.0",
     "postcss": "^8.2.8",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.0.0",

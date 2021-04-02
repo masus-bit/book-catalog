@@ -2,6 +2,7 @@ import { Action as ActionRedux } from 'redux'
 import { App } from '../../types/app'
 import { Auth } from '../../types/auth'
 import { Thunk } from '../../types/base'
+import { User } from '../../types/user'
 import { AppAction } from './appAction'
 export declare namespace AppState {
     interface State {
@@ -19,5 +20,6 @@ export declare namespace AppState {
     }
     interface ActionThunk {
         appLogin: Thunk<Auth.Login.Params>
+        appCreate:Thunk<User.Create.Params>
     }
 }

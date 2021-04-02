@@ -1,1 +1,3 @@
-export const emptyFunc= ()=>{}
+export const emptyFunc= (e:any)=>{
+    e.preventDefault()
+}
