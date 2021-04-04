@@ -43,7 +43,7 @@ export const Input: React.FC<Props> = ({
     return (
         <div className={b({}).mix(className)}>
             <div className={b('container')}>
-            {!!label && <label className={b('label')}></label>}
+            {!!label && <label className={b('label')}>{label}</label>}
         <input value={currentValue} name={name} onChange={handlerChange} disabled={disabled}  required placeholder={placeholder} type={htmlType} className={b('input')}/>
        
         </div>

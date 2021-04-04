@@ -6,7 +6,8 @@ const InitialState: AppState.State = {
     loading: false,
     accessToken: '',
     refreshToken: '',
-    errorText: ''
+    errorText: '',
+    successRegText:'',
 }
 
 export const appReducer: Reducer<AppState.State, AppState.Action.All> = (state = InitialState, action) => {
@@ -29,6 +30,12 @@ export const appReducer: Reducer<AppState.State, AppState.Action.All> = (state =
                 ...state,
                 loading: false,
                 errorText: action.payload
+            }
+        case AppAction.RegSuccess:
+            return{
+                ...state,
+                successRegText:action.payload,
+                loading:false,
             }
         default:
             return state

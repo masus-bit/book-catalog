@@ -1,16 +1,19 @@
-import React from 'react'
-import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
-import { Routes } from './pages/Routes'
-import { store } from './store'
+import React from "react";
+import { Provider } from "react-redux";
+import { Router } from "react-router";
+import { PersistGate } from "redux-persist/integration/react";
+import { browserHistory } from "./browserHistory";
+import { Routes } from "./pages/Routes";
+import { persistor, store } from "./store";
 
-interface Props {
-}
+interface Props {}
 
 export const App: React.FC<Props> = () => (
   <Provider store={store}>
-    <BrowserRouter >
-      <Routes />
-    </BrowserRouter>
+    <PersistGate persistor={persistor}>
+      <Router history={browserHistory}>
+        <Routes />
+      </Router>
+    </PersistGate>
   </Provider>
-)
+);
