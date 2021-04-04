@@ -70,7 +70,6 @@ const AuthFormPresenter: React.FC<Props> = ({ loading, errorText, appLogin }) =>
         name={"password"}
       />
       {!!errorText && <p className={"error"}>{errorText}</p>}
-
       <Button htmlType={"submit"} text={"Войти"} onClick={handlerSubmit} />
       <a href="/registration" className={b("reg-link")}>
         Регистрация
@@ -80,7 +79,7 @@ const AuthFormPresenter: React.FC<Props> = ({ loading, errorText, appLogin }) =>
 };
 const mapStateToProps: MapStateToProps<StateProps, OwnProps, RootState.State> = ({ app }) => ({
   loading: app.loading,
-  errorText: app.errorText,
+  errorText: app.errorText
 });
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, OwnProps> = { ...appActions };
