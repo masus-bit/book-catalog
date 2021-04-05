@@ -3,18 +3,21 @@
   justify-content: space-around;
   
   &__link {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
 color:white;
     margin-top: 50px;
     width: 200px;
-    height: 20px;
+    height: 40px;
     border-radius: 5px;
-    border: solid 2px white;
-    transition: 0.4s;
+    border: solid 1px white;
+    transition: 0.3s;
     font-size: 20px;
     &:hover {
-      border: solid 2px red;
+      background: #fff;
+      color: black;
     }
   }
 }

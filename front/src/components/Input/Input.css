@@ -1,0 +1,16 @@
+.input{
+  &__input {
+    width: 250px;
+    height: 30px;
+    border: 2px gray solid;
+    border-radius: 5px;
+    
+    font-size: 20px;
+    
+  }
+  &__container{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+}

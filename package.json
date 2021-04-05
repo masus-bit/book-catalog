@@ -5,8 +5,5 @@
   "private": true,
   "scripts": {
     "install-all": "cd back && npm i && cd ../front && npm i"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT"
+  }
 }

@@ -1,0 +1,9 @@
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    &__reg-link{
+        color:lightblue;
+        margin-top:20px;
+    }
+    align-items:center;
+}
