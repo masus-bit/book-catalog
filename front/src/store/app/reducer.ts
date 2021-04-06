@@ -37,6 +37,13 @@ export const appReducer: Reducer<AppState.State, AppState.Action.All> = (state =
                 successRegText:action.payload,
                 loading:false,
             }
+        case AppAction.Logout:
+            return{
+                ...state,
+                accessToken:'',
+                refreshToken:'',
+                loading:false,
+            }
         default:
             return state
     }

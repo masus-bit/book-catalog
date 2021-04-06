@@ -1,4 +1,4 @@
-import { apiAutchLogin } from "../../api/auth";
+import { apiAutchLogin, apiAuthLogout } from "../../api/auth";
 import { apiUserCreate } from "../../api/user";
 import { App } from "../../types/app";
 import { AppAction } from "./appAction";
@@ -19,6 +19,9 @@ const appRegSuccess = (payload: string): AppState.Action.RegisterSuccess => ({
   type: AppAction.RegSuccess,
   payload,
 });
+const appLogout = (): AppState.Action.Logout => ({
+  type: AppAction.Logout,
+})
 export const appActions: AppState.ActionThunk = {
   appLogin: (params) => async (dispatch) => {
     dispatch(appFetch());
@@ -26,7 +29,7 @@ export const appActions: AppState.ActionThunk = {
     try {
       const tokenPair = await apiAutchLogin(params);
       dispatch(appFetchSuccess(tokenPair));
-      
+
     } catch (err) {
       dispatch(appFetchError("Ошибка авторизации"));
     }
@@ -40,4 +43,14 @@ export const appActions: AppState.ActionThunk = {
       dispatch(appFetchError("Ошибка регистрации"));
     }
   },
+  appLogout: () => async (dispatch) => {
+    dispatch(appFetch());
+
+    try {
+      await apiAuthLogout()
+      dispatch(appLogout())
+    } catch (err) {
+      dispatch(appFetchError('Ошибка http'))
+    }
+  }
 };

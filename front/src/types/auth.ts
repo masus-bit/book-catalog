@@ -12,4 +12,11 @@ export declare namespace Auth{
             refreshToken: string;
         }
     }
+
+    namespace Logout{
+
+        interface Params{
+            
+        }
+    }
 }

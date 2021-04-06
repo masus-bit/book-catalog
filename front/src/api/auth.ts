@@ -11,3 +11,8 @@ export const apiAuthRefresh = async (params: Auth.Refresh.Params) : Promise<App.
     const {data} = await ApiService().post('/auth/refresh',params)
     return data
 }
+
+export const apiAuthLogout = async ():Promise<Auth.Logout.Params> =>{
+    const {data} = await ApiService(true).post('/auth/logout')
+    return data
+}

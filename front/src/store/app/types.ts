@@ -17,10 +17,12 @@ export declare namespace AppState {
         type FetchSuccess = ActionRedux<AppAction.FetchSuccess> & { payload: App.Token }
         type FetchError = ActionRedux<AppAction.FetchError> & { payload: string }
         type RegisterSuccess = ActionRedux<AppAction.RegSuccess> & {payload: string}
-        type All = Fetch | FetchSuccess | FetchError | RegisterSuccess
+        type Logout = ActionRedux<AppAction.Logout> 
+        type All = Fetch | FetchSuccess | FetchError | RegisterSuccess | Logout
     }
     interface ActionThunk {
         appLogin: Thunk<Auth.Login.Params>
         appCreate:Thunk<User.Create.Params>
+        appLogout: Thunk
     }
 }
