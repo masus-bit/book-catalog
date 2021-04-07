@@ -1,8 +1,9 @@
+@import '../../assets/styles/colors.css';
 .input{
   &__input {
     width: 250px;
     height: 30px;
-    border: 2px gray solid;
+    border: 2px var(--bg-header) solid;
     border-radius: 5px;
     
     font-size: 20px;

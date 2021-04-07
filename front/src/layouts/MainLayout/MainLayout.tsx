@@ -1,22 +1,36 @@
 import block from 'bem-cn'
-import React from 'react'
+import React, { useCallback } from 'react'
+import { connect, MapDispatchToProps } from 'react-redux'
+import { Button } from '../../components/Button/Button'
 import { Header } from '../../components/Header/Header'
 import { MainMenu } from '../../components/MainMenu/MainMenu'
+import { appActions } from '../../store/app/actions'
+import { AppState } from '../../store/app/types'
 import './MainLayout.css'
 
-interface Props {
+
+interface DispatchProps extends AppState.ActionThunk {
+
 }
+interface OwnProps {
+}
+type Props = OwnProps & DispatchProps
 
 const b = block('main-layout')
 
-export const MainLayout: React.FC<Props> = (props) => {
+const MainLayoutPresenter: React.FC<Props> = ({children, appLogout}) => {
+  const rightBtn=useCallback(()=><Button htmlType={'button'} text={'Выйти'} className={'logout'} onClick={()=>appLogout()} />,[])
   return (
     <div className={b()}>
-      <Header />
+      <Header rightBtn={rightBtn} />
       <MainMenu />
       <main className={b('main')}>
-        {props.children}
+        {children}
       </main>
     </div>
   )
 }
+
+const mapDispatchToProps:MapDispatchToProps<DispatchProps,OwnProps>=({...appActions})
+
+export const MainLayout=connect(null,mapDispatchToProps)(MainLayoutPresenter)

@@ -1,11 +1,12 @@
+@import '../../assets/styles/colors.css';
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px 8px 12px;
   height: 40px;
-  background-color: gray;
-  color: black;
+  background-color: var(--bg-header);
+  color: var(--text-black);
 height:100px;
 position:relative;
   &__title {

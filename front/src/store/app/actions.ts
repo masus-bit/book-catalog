@@ -48,9 +48,12 @@ export const appActions: AppState.ActionThunk = {
 
     try {
       await apiAuthLogout()
-      dispatch(appLogout())
+      
     } catch (err) {
       dispatch(appFetchError('Ошибка http'))
+    }
+    finally{
+      dispatch(appLogout())
     }
   }
 };

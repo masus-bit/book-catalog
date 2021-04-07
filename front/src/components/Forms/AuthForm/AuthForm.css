@@ -1,8 +1,9 @@
+@import '../../../assets/styles/colors.css';
 .auth-form{
     display: flex;
     flex-direction: column;
     &__reg-link{
-        color:lightblue;
+        color:var(--link);
         margin-top:20px;
     }
     align-items:center;
