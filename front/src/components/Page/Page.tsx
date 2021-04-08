@@ -1,22 +1,23 @@
-import React, { useState } from "react";
-import { connect, MapStateToProps } from "react-redux";
-import { Redirect, Route } from "react-router";
-import { MainLayout } from "../../layouts/MainLayout/MainLayout";
-import { RootState } from "../../store/types";
-import { checkAccessToken } from "../../utils";
+import React from 'react'
+import { connect, MapStateToProps } from 'react-redux'
+import { Redirect, Route } from 'react-router'
+import { MainLayout } from '../../layouts/MainLayout/MainLayout'
+import { RootState } from '../../store/types'
+import { checkAccessToken } from '../../utils'
 interface StateProps {
-  isAuth: boolean;
+  isAuth: boolean
 }
 
 interface OwnProps {
-  exact?: boolean;
-  secured?: boolean;
-  path: string;
-  layout?: any;
-  component: any;
-  publicOnly?: boolean;
+  exact?: boolean
+  secured?: boolean
+  path: string
+  layout?: any
+  component: any
+  publicOnly?: boolean
 }
-type Props = OwnProps & StateProps;
+
+type Props = OwnProps & StateProps
 
 const PagePresenter: React.FC<Props> = ({
   secured = false,
@@ -28,22 +29,27 @@ const PagePresenter: React.FC<Props> = ({
   publicOnly = false,
 }) => {
   if (secured && !isAuth) {
-    return <Redirect to={"/auth"} />;
+    return <Redirect to={'/auth'} />
   }
   if (publicOnly && isAuth) {
-    return <Redirect to={"/"} />;
+    return <Redirect to={'/'} />
   }
+
   return (
     <Route exact={exact} path={path}>
       <Layout>
         <Component />
       </Layout>
     </Route>
-  );
-};
+  )
+}
 
-const mapStateToProps: MapStateToProps<StateProps, OwnProps, RootState.State> = ({ app }) => ({
+const mapStateToProps: MapStateToProps<
+  StateProps,
+  OwnProps,
+  RootState.State
+> = ({ app }) => ({
   isAuth: checkAccessToken(app.accessToken),
-});
+})
 
-export const Page = connect(mapStateToProps)(PagePresenter);
+export const Page = connect(mapStateToProps)(PagePresenter)

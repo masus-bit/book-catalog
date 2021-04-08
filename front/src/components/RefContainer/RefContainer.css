@@ -1,0 +1,11 @@
+@import '../../assets/styles/colors.css';
+.ref-container {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  background: var(--white);
+  color: var(--text-black);
+  box-shadow: 0 0 12px var(--white);
+  border-radius: 12px;
+  padding: 24px;
+}

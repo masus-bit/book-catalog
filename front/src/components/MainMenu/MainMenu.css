@@ -2,13 +2,13 @@
 .main-menu {
   display: flex;
   justify-content: space-around;
-  
+
   &__link {
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-color:var(--white);
+    color: var(--white);
     margin-top: 50px;
     width: 200px;
     height: 40px;
