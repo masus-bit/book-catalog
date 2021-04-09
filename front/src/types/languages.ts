@@ -3,4 +3,9 @@ export declare namespace Languages {
     id: number
     name: string
   }
+  namespace Create{
+    interface Params{
+      name:string
+    }
+  }
 }

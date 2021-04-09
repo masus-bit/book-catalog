@@ -25,7 +25,10 @@ export const Routes: React.FC<Props> = () => {
       <Page exact secured path={"/ref"} component={RefPage} />
       <Page secured path={"/ref/authors"} component={AuthorPage} />
       <Page secured path={"/ref/genres"} component={GenrePage} />
-      <Page secured path={"/ref/languages"} component={LanguagePage} />
+      <Page exact secured path={'/ref/languages'} component={LanguagePage} />
+      <Page exact secured path={'/ref/languages/create'} component={''} />
+      <Page exact secured path={'/ref/languages/:id'} component={''} />
+      <Page exact secured path={'/ref/languages/:id/edit'} component={''} />
       <Page secured path={"/ref/publishers"} component={PublisherPage} />
       <Page secured path={"/about"} component={AboutPage} />
       <Page path={"*"} layout={AuthLayout} component={Error404} />

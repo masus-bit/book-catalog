@@ -6,13 +6,14 @@ import { Header } from '../../components/Header/Header'
 import { MainMenu } from '../../components/MainMenu/MainMenu'
 import { appActions } from '../../store/app/actions'
 import { AppState } from '../../store/app/types'
+import { BaseLayoutProps } from '../../types/base'
 import './MainLayout.css'
 
 
 interface DispatchProps extends AppState.ActionThunk {
 
 }
-interface OwnProps {
+interface OwnProps extends BaseLayoutProps {
 }
 type Props = OwnProps & DispatchProps
 
