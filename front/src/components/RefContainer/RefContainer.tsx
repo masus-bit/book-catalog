@@ -1,8 +1,9 @@
 import block from 'bem-cn'
 import React, { ReactNode } from 'react'
+import { BaseComponentProps } from '../../types/base'
 import './RefContainer.css'
 
-interface Props {
+interface Props extends BaseComponentProps {
   title?: string
   element?: () => ReactNode
 }
@@ -14,6 +15,7 @@ export const RefContainer: React.FC<Props> = ({ children, title, element }) => {
     <React.Fragment>
       <h2 className={b('title')}>{title}</h2>
       <div className={b()}>{children}</div>
+      {!!element && element()}
     </React.Fragment>
   )
 }

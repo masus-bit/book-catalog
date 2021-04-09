@@ -1,29 +1,23 @@
-import './LanguagePage.css'
-import React, { useEffect, useState } from 'react'
-import block from 'bem-cn'
-import { RefContainer } from '../../components/RefContainer/RefContainer'
-import { RefList } from '../../components/RefList/RefList'
-import { apiLanguagesGetAll } from '../../api/languages'
-import { Languages } from '../../types/languages'
+import "./LanguagePage.css";
+import React from "react";
+import block from "bem-cn";
+import { RefContainer } from "../../components/RefContainer/RefContainer";
+import { RefList } from "../../components/RefList/RefList";
+import { useLanguageGetAll } from "../../hooks/useLanguageGetAll";
+import { BasePageProps } from "../../types/base";
 
-const b = block('language-page')
-interface Props {}
+const b = block("language-page");
+interface Props extends BasePageProps {}
 
 export const LanguagePage: React.FC<Props> = () => {
-  const [data, setData] = useState<Languages.Data[]>([])
+  const { data, loading } = useLanguageGetAll();
 
-  useEffect(() => {
-    const loadData = async () => {
-      let data = await apiLanguagesGetAll()
-      setData(data)
-    }
-    loadData()
-  }, [])
   return (
     <div className={b()}>
       <RefContainer>
-        {!!data && <RefList data={data} title={'Языки'} />}
+        {data.length > 0 && !loading ? <RefList data={data} title={"Языки"} /> : <p>Ничего не найдено</p>}
+    
       </RefContainer>
     </div>
-  )
-}
+  );
+};

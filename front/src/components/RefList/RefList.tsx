@@ -16,11 +16,10 @@ export const RefList: React.FC<Props> = ({ data, title }) => {
       <h2 className={b('title')}>{title}</h2>
       <ul className={b('list')}>
         <li className={b('ref-item')}>
-          <span className={b('id-name').mix('id')}>ID</span>
           <span className={b('name-name').mix('name')}>Название</span>
         </li>
-        {data.map((it, i) => {
-          return <RefItem item={it} key={i} />
+        {data.map((it) => {
+          return <RefItem item={it} key={it.id} />
         })}
       </ul>
     </div>

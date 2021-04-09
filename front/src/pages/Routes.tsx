@@ -9,6 +9,7 @@ import { CatalogPage } from "./CatalogPage/CatalogPage";
 import { Error404 } from "./Error404/Error404";
 import { GenrePage } from "./GenrePage/GenrePage";
 import { LanguagePage } from "./LanguagePage/LanguagePage";
+import { LanguageSinglePage} from "./LanguageSinglePage/LanguageSinglePage";
 import { PublisherPage } from "./PublisherPage/PublisherPage";
 import { RefPage } from "./RefPage/RefPage";
 import { RegisterPage } from "./RegisterPage/RegisterPage";
@@ -26,8 +27,8 @@ export const Routes: React.FC<Props> = () => {
       <Page secured path={"/ref/authors"} component={AuthorPage} />
       <Page secured path={"/ref/genres"} component={GenrePage} />
       <Page exact secured path={'/ref/languages'} component={LanguagePage} />
-      <Page exact secured path={'/ref/languages/create'} component={''} />
-      <Page exact secured path={'/ref/languages/:id'} component={''} />
+      {/* <Page exact secured path={'/ref/languages/create'} component={''} /> */}
+      <Page exact secured path={'/ref/languages/:id'} component={LanguageSinglePage} />
       <Page exact secured path={'/ref/languages/:id/edit'} component={''} />
       <Page secured path={"/ref/publishers"} component={PublisherPage} />
       <Page secured path={"/about"} component={AboutPage} />
