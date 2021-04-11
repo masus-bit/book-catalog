@@ -12,6 +12,11 @@ export const languageGetAll: App.Action = async (req, res) => {
 
   res.json(languages)
 }
+export const languageById: App.Action<Language.Single.Request> = async (req, res) => {
+  const language = await languageRepository.getById(req.params.id)
+
+  res.json(language)
+}
 
 export const languageCreate: App.Action<Language.Create.Request> = async (req, res) => {
   await schemaLanguageCreate.validate(req.body)

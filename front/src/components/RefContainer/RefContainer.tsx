@@ -12,10 +12,10 @@ const b = block('ref-container')
 
 export const RefContainer: React.FC<Props> = ({ children, title, element }) => {
   return (
-    <React.Fragment>
+    <div className={b()}>
       <h2 className={b('title')}>{title}</h2>
-      <div className={b()}>{children}</div>
+      <div className={b('wrapper')}>{children}</div>
       {!!element && element()}
-    </React.Fragment>
+    </div>
   )
 }

@@ -3,8 +3,9 @@ import React, { MouseEventHandler } from 'react'
 import block from 'bem-cn'
 import { emptyFunc } from '../../utils'
 import { LoadingIndicator } from '../LoadingIndicator/LoadingIndicator'
+import { BaseComponentProps } from '../../types/base'
 
-interface Props {
+interface Props extends BaseComponentProps {
   text: string
   htmlType?: 'submit' | 'reset' | 'button'
   onClick?: MouseEventHandler<HTMLButtonElement>

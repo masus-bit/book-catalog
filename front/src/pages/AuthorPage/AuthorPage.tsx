@@ -5,11 +5,12 @@ import { apiAughorsGetAll } from '../../api/authors'
 import { RefContainer } from '../../components/RefContainer/RefContainer'
 import { RefList } from '../../components/RefList/RefList'
 import { Authors } from '../../types/authors'
+import { BasePageProps } from '../../types/base'
 
 const b = block('author-page')
-interface Props {}
+interface Props extends BasePageProps {}
 
-export const AuthorPage: React.FC<Props> = () => {
+export const AuthorPage: React.FC<Props> = ({match}) => {
   const [data, setData] = useState<Authors.Data[]>([])
 
   useEffect(() => {
@@ -22,7 +23,7 @@ export const AuthorPage: React.FC<Props> = () => {
   return (
     <div className={b()}>
       <RefContainer>
-        {!!data && <RefList data={data} title={'Авторы'} />}
+        {!!data && <RefList data={data} match={match} title={'Авторы'} />}
       </RefContainer>
     </div>
   )

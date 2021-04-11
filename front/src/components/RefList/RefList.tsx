@@ -1,25 +1,30 @@
 import block from 'bem-cn'
 import React from 'react'
 import './RefList.css'
-import { RefItem } from '../RefItem/RefItem'
+import { BaseComponentProps } from '../../types/base'
+import { match, RouteComponentProps } from 'react-router'
+import { Link } from 'react-router-dom'
 
-interface Props {
+interface Props extends BaseComponentProps {
   data: Array<any>
   title: string
+  match: match<{}> 
 }
 
 const b = block('ref-list')
 
-export const RefList: React.FC<Props> = ({ data, title }) => {
+export const RefList: React.FC<Props> = ({ data, title, match }) => {
   return (
     <div className={b()}>
       <h2 className={b('title')}>{title}</h2>
       <ul className={b('list')}>
-        <li className={b('ref-item')}>
+        <li className={b('ref-item-title')}>
           <span className={b('name-name').mix('name')}>Название</span>
         </li>
         {data.map((it) => {
-          return <RefItem item={it} key={it.id} />
+          return <li className={b('ref-item')}>
+          <Link to={`${match!==undefined?match.url:null}/${it.id}`} className={b('name')}>{it.name}</Link>
+        </li> 
         })}
       </ul>
     </div>

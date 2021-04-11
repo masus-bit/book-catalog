@@ -2,27 +2,27 @@ import React, { MouseEventHandler, useState } from 'react'
 import block from 'bem-cn'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { apiLanguagesCreate, apiLanguagesUpdate } from '../../../api/languages'
 import { browserHistory } from '../../../browserHistory'
 import { BaseComponentProps } from '../../../types/base'
-import { Languages } from '../../../types/languages'
 import { Button } from '../../Button/Button'
 import { Input } from '../../Input/Input'
+import { Genres } from '../../../types/genres'
+import { apiGenresCreate, apiGenresUpdate } from '../../../api/genres'
 
 interface Props extends BaseComponentProps {
-  data: Languages.Data | null;
+  data: Genres.Data | null;
 }
 
-const b = block('language-form')
+const b = block('genre-form')
 
-const schema: Yup.SchemaOf<Languages.Create.Params> = Yup.object().shape(({
+const schema: Yup.SchemaOf<Genres.Create.Params> = Yup.object().shape(({
   name: Yup.string().required('Обязательное')
 }))
 
-export const LanguageForm: React.FC<Props> = ({ className = '', data }) => {
+export const GenreForm: React.FC<Props> = ({ className = '', data }) => {
   const [loading, setLoading] = useState<boolean>(false)
   const [errorText, setErrorText] = useState<string>('')
-  const { errors, values, submitForm, handleChange } = useFormik<Languages.Create.Params>({
+  const { errors, values, submitForm, handleChange } = useFormik<Genres.Create.Params>({
     initialValues: {
       name: data?.name??''
     },
@@ -34,12 +34,12 @@ export const LanguageForm: React.FC<Props> = ({ className = '', data }) => {
         if (data) {
           id = data.id
           
-          await apiLanguagesUpdate({ ...data, ...fields })
+          await apiGenresUpdate({ ...data, ...fields })
         } else {
-          const res = await apiLanguagesCreate(fields)
+          const res = await apiGenresCreate(fields)
           id = res.id
         }
-        browserHistory.push(`/ref/languages/${id}`)
+        browserHistory.push(`/ref/genres/${id}`)
       } catch (err) {
         setErrorText(err.message)
       } finally {
@@ -58,7 +58,7 @@ export const LanguageForm: React.FC<Props> = ({ className = '', data }) => {
       <Input
       htmlType={'text'}
         className={b('field')}
-        label={'Язык'}
+        label={'Жанр'}
         name={'name'}
         value={values.name}
         onChange={handleChange}

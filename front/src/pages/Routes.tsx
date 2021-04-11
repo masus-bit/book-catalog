@@ -8,7 +8,10 @@ import { AuthPage } from "./AuthPage/AuthPage";
 import { CatalogPage } from "./CatalogPage/CatalogPage";
 import { Error404 } from "./Error404/Error404";
 import { GenrePage } from "./GenrePage/GenrePage";
+import { GenrePageEdit } from "./GenrePageEdit/GenrePageEdit";
+import { GenreSinglePage } from "./GenreSinglePage/GenreSinglePage";
 import { LanguagePage } from "./LanguagePage/LanguagePage";
+import { LanguagePageEdit } from "./LanguagePageEdit/LanguagePageEdit";
 import { LanguageSinglePage} from "./LanguageSinglePage/LanguageSinglePage";
 import { PublisherPage } from "./PublisherPage/PublisherPage";
 import { RefPage } from "./RefPage/RefPage";
@@ -25,11 +28,14 @@ export const Routes: React.FC<Props> = () => {
       <Page secured path={"/catalog"} component={CatalogPage} />
       <Page exact secured path={"/ref"} component={RefPage} />
       <Page secured path={"/ref/authors"} component={AuthorPage} />
-      <Page secured path={"/ref/genres"} component={GenrePage} />
+      <Page exact secured path={"/ref/genres"} component={GenrePage} />
+      <Page exact secured path={'/ref/genres/create'} component={GenrePageEdit} />
+      <Page exact secured path={'/ref/genres/:id'} component={GenreSinglePage} />
+      <Page exact secured path={'/ref/genres/:id/edit'} component={GenrePageEdit} />
       <Page exact secured path={'/ref/languages'} component={LanguagePage} />
-      {/* <Page exact secured path={'/ref/languages/create'} component={''} /> */}
+      <Page exact secured path={'/ref/languages/create'} component={LanguagePageEdit} />
       <Page exact secured path={'/ref/languages/:id'} component={LanguageSinglePage} />
-      <Page exact secured path={'/ref/languages/:id/edit'} component={''} />
+      <Page exact secured path={'/ref/languages/:id/edit'} component={LanguagePageEdit} />
       <Page secured path={"/ref/publishers"} component={PublisherPage} />
       <Page secured path={"/about"} component={AboutPage} />
       <Page path={"*"} layout={AuthLayout} component={Error404} />

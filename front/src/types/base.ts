@@ -4,6 +4,7 @@ import { RootState } from '../store/types'
 
 export interface BaseComponentProps {
     className?: string;
+    
   }
   
   export interface BasePageProps<T extends object = {}> extends RouteComponentProps<T> {

@@ -123,6 +123,7 @@ module.exports = function (webpackEnv) {
           // ident: 'postcss',
           postcssOptions: {
             plugins: [
+              require('postcss-mixins'),
               require('postcss-import'),
               require('postcss-nested'),
               require('postcss-flexbugs-fixes'),
