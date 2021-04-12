@@ -19,23 +19,24 @@ interface Props extends BaseComponentProps {
 
 const b = block('input')
 
-export const Input: React.FC<Props> = ({ 
+export const Input= React.forwardRef<HTMLInputElement, Props>(({ 
     value = '',
     name,
     required = false,
     placeholder = '',
     htmlType = '',
     className = '',
-    defaultValue = '',
+    defaultValue = 'OLEG',
     onChange = emptyFunc,
     error = '',
     disabled = false,
-    label = '' }) => {
+    label = '' },ref) => {
         const [currentValue, setCurrentValue]=useState<string>(defaultValue)
         const handlerChange: ChangeEventHandler<HTMLInputElement>=event =>{
             event.preventDefault()
             setCurrentValue(event.target.value)
             onChange(event)
+            
         }
         useEffect(()=>{
             setCurrentValue(value)
@@ -44,10 +45,11 @@ export const Input: React.FC<Props> = ({
         <div className={b({}).mix(className)}>
             <div className={b('container')}>
             {!!label && <label className={b('label')}>{label}</label>}
-        <input value={currentValue} name={name} onChange={handlerChange} disabled={disabled}  required placeholder={placeholder} type={htmlType} className={b('input')}/>
+            {console.log(currentValue)}
+        <input ref={ref} value={currentValue} name={name} onChange={handlerChange} disabled={disabled}  required placeholder={placeholder} type={htmlType} className={b('input')}/>
        
         </div>
        {!!error && <p className={b('error')}>{error}</p>}
         </div>
     )
-}
+})

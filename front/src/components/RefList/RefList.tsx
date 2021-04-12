@@ -22,7 +22,7 @@ export const RefList: React.FC<Props> = ({ data, title, match }) => {
           <span className={b('name-name').mix('name')}>Название</span>
         </li>
         {data.map((it) => {
-          return <li className={b('ref-item')}>
+          return <li className={b('ref-item')} key={it.id}>
           <Link to={`${match!==undefined?match.url:null}/${it.id}`} className={b('name')}>{it.name}</Link>
         </li> 
         })}

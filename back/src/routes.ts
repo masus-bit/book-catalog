@@ -1,10 +1,10 @@
 import { authLogin, authLogout, authRefresh } from './controller/AuthController'
-import { authorCreate, authorDelete, authorGetAll, authorUpdate } from './controller/AuthorController'
+import { authorCreate, authorDelete, authorGetAll, authorUpdate, authorById } from './controller/AuthorController'
 import { bookCreate, bookDelete, bookGetAll, bookGetById, bookUpdate } from './controller/BookController'
 import { fileGetDataById, fileGetInfoById, fileUpload } from './controller/FileController'
 import { genreCreate, genreDelete, genreGetAll, genreUpdate, genreById } from './controller/GenreController'
 import { languageCreate, languageDelete, languageGetAll, languageUpdate, languageById } from './controller/LanguageController'
-import { publisherCreate, publisherDelete, publisherGetAll, publisherUpdate } from './controller/PublisherController'
+import { publisherCreate, publisherDelete, publisherGetAll, publisherUpdate, publisherById } from './controller/PublisherController'
 import { userCreate } from './controller/UserController'
 import { authMiddleware } from './middleware/authMiddleware'
 import { App } from './types/app'
@@ -66,6 +66,12 @@ export const Routes: App.Route[] = [
     path: '/authors',
     middleware: [authMiddleware],
     action: authorGetAll
+  },
+  {
+    method: 'get',
+    path: '/authors/:id',
+    middleware: [authMiddleware],
+    action: authorById
   },
   {
     method: 'post',
@@ -156,6 +162,12 @@ export const Routes: App.Route[] = [
     path: '/publishers',
     middleware: [authMiddleware],
     action: publisherCreate
+  },
+  {
+    method: 'get',
+    path: '/publishers/:id',
+    middleware: [authMiddleware],
+    action: publisherById
   },
   {
     method: 'put',

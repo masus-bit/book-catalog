@@ -1,23 +1,23 @@
 @import '../../assets/styles/colors.css';
-.loading-ind{
-    border-bottom:3px solid var(--text-black);
-    display:inline-block;
-    position: absolute;
-    margin-right:20px;
-    animation: rotation 0.3s ;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    width:20px;
-    height:20px;
-    border-radius:100%;
-    left:20px;
+.loading-ind {
+  border-bottom: 3px solid var(--text-black);
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  animation: rotation 0.3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  left: 20px;
 }
 
 @keyframes rotation {
-    0%{
-        transform:rotate(0deg)
-    }
-    100%{
-        transform:rotate(360deg)
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

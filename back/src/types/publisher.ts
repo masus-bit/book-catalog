@@ -52,4 +52,11 @@ export declare namespace Publisher {
 
     type Request = RequestExpress<Params & App.ParamsDictionary, null, null>
   }
+  namespace Single {
+    interface Params {
+      id: number;
+    }
+
+    type Request = RequestExpress<Params & App.ParamsDictionary, null, null>
+  }
 }

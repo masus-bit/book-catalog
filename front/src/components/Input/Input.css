@@ -1,15 +1,15 @@
 @import '../../assets/styles/colors.css';
-.input{
+.input {
   &__input {
     width: 250px;
     height: 30px;
     border: 2px var(--bg-header) solid;
     border-radius: 5px;
-    
+
+    outline: none;
     font-size: 20px;
-    
   }
-  &__container{
+  &__container {
     margin-top: 10px;
     display: flex;
     flex-direction: column;

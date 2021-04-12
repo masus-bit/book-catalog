@@ -17,6 +17,11 @@ export const authorGetAll: App.Action<Author.List.Request> = async (req, res) =>
 
   res.json(authors)
 }
+export const authorById: App.Action<Author.Single.Request> = async (req, res) => {
+  const authors = await authorRepository.getById(req.params.id)
+
+  res.json(authors)
+}
 
 export const authorCreate: App.Action<Author.Create.Request> = async (req, res) => {
   await schemaAuthorCreate.validate(req.body)

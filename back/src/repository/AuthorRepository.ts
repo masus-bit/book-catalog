@@ -10,6 +10,11 @@ export class AuthorRepository implements Author.Repository {
       .getRepository(AuthorEntity)
       .save(authorData)
   }
+  async getById (authorId: string | number): Promise<AuthorEntity | undefined> {
+    return await getConnection()
+      .getRepository(AuthorEntity)
+      .findOne(authorId)
+  }
 
   async delete (authorId: number | string): Promise<void> {
     await getConnection()

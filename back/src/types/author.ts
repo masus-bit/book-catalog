@@ -6,6 +6,7 @@ import { App } from './app'
 
 export declare namespace Author {
   interface Repository {
+    getById (authorId: string | number): Promise<AuthorEntity | undefined>
     getAll (): Promise<AuthorEntity[]>
 
     getByIdWithRelations (authorId: string | number): Promise<AuthorEntity | undefined>
