@@ -8,6 +8,7 @@ import { Button } from "../../Button/Button";
 import { Input } from "../../Input/Input";
 import { Authors } from "../../../types/authors";
 import { apiAuthorsCreate, apiAuthorsUpdate } from "../../../api/authors";
+import { ButtonType } from "../../Button/ButtonType";
 
 interface Props extends BaseComponentProps {
   data: Authors.Data | null;
@@ -67,7 +68,7 @@ export const AuthorForm: React.FC<Props> = ({ className = "", data }) => {
       />
       {!errorText && <p className={b("error")}>{errorText}</p>}
       <div className={b("buttons")}>
-        <Button text={!!data ? "Сохранить" : "Создать"} onClick={handlerSubmit} loading={loading} />
+        <Button type={ButtonType.Monochrome} text={!!data ? "Сохранить" : "Создать"} onClick={handlerSubmit} loading={loading} />
       </div>
     </form>
   );

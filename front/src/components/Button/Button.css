@@ -1,4 +1,5 @@
 @import '../../assets/styles/colors.css';
+@import '../../assets/styles/theme.css';
 .button {
   display: flex;
   justify-content: center;
@@ -7,7 +8,6 @@
   font-family: inherit;
   font-size: 20px;
   margin-top: 20px;
-  background: var(--white);
   border: none;
   box-shadow: 0 0 3px;
   border-radius: 5px;
@@ -16,9 +16,30 @@
   transition: 0.3s;
   outline: none;
   &:hover {
-    background: var(--hover-btn);
     cursor: pointer;
   }
+  &_colorful{
+    color: var(--text-colorful-color);
+    background-color: var(--background-colorful-color);
+    &:hover{
+      background-color:var(--background-colorful-hover);
+    }
+  }
+  &_monochrome{
+    color: var(--text-monochrome-color);
+    background-color: var(--background-monochrome-color);
+    &:hover{
+      color:var(--text-monochrome-hover);
+      background-color:var(--background-monochrome-hover);
+      box-shadow: 0 0 6px var(--box-shadow-monochrome-hover);
+    }
+  }
+  &_logout{
+    &:hover{
+      background-color:var(--background-logout-hover);
+    }
+  }
+  
   
 }
 .logout {

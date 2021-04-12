@@ -10,6 +10,7 @@ import { debounce } from 'lodash'
 import { browserHistory } from '../../browserHistory'
 import { Button } from '../../components/Button/Button'
 import { LoadingIndicator } from '../../components/LoadingIndicator/LoadingIndicator'
+import { ButtonType } from '../../components/Button/ButtonType'
 
 const b = block('publisher-page')
 interface Props extends BasePageProps {}
@@ -40,6 +41,7 @@ export const PublisherAllPage: React.FC<Props> = ({ match }) => {
         )}
         element={() => (
           <Button
+            type={ButtonType.Monochrome}
             htmlType={'button'}
             text={'Создать'}
             onClick={() => browserHistory.push('/ref/publishers/create')}

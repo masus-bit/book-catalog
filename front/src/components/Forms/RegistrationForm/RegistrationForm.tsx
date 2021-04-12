@@ -10,6 +10,7 @@ import { RootState } from "../../../store/types";
 import { appActions } from "../../../store/app/actions";
 import { Button } from "../../Button/Button";
 import './RegistrationForm.css'
+import { ButtonType } from "../../Button/ButtonType";
 interface StateProps {
   loading: boolean;
   errorText: string;
@@ -99,7 +100,7 @@ const RegistrationFormPresenter: React.FC<Props> = ({ loading, errorText, appCre
       />
       {!!errorText && <p className={'error'}>{errorText}</p>}
       {!!successRegText && <p className={'success'}>{successRegText}</p>}
-      <Button loading={loading}  text={"Зарегистрироваться"} htmlType={"submit"} onClick={handlerSubmit} />
+      <Button  type={ButtonType.Colorful} loading={loading}  text={"Зарегистрироваться"} htmlType={"submit"} onClick={handlerSubmit} />
       <a href="/auth" className={b("auth-link")}>
         Войти
       </a>

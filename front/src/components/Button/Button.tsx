@@ -4,6 +4,7 @@ import block from 'bem-cn'
 import { emptyFunc } from '../../utils'
 import { LoadingIndicator } from '../LoadingIndicator/LoadingIndicator'
 import { BaseComponentProps } from '../../types/base'
+import { ButtonType } from './ButtonType'
 
 interface Props extends BaseComponentProps {
   text: string
@@ -11,6 +12,7 @@ interface Props extends BaseComponentProps {
   onClick?: MouseEventHandler<HTMLButtonElement>
   className?: string
   loading?: boolean
+  type:ButtonType
 }
 
 const b = block('button')
@@ -21,8 +23,9 @@ export const Button: React.FC<Props> = ({
   onClick = emptyFunc,
   className,
   loading = false,
+  type=ButtonType.Colorful
 }) => (
-  <button onClick={onClick} type={htmlType} className={b({}).mix(className)}>
+  <button onClick={onClick} type={htmlType} className={b({[type]:true}).mix(className)}>
     {' '}
     {loading && <LoadingIndicator className={loading ? 'spin' : ''} />} {text}{' '}
   </button>

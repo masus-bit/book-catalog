@@ -10,7 +10,7 @@ import { AuthPage } from "./AuthPage/AuthPage";
 import { CatalogPage } from "./CatalogPage/CatalogPage";
 import { Error404 } from "./Error404/Error404";
 import { GenreAllPage } from "./GenreAllPage/GenreAllPage";
-import { GenreEditPage } from "./GenrePageEdit/GenreEditPage";
+import { GenreEditPage } from "./GenreEditPage/GenreEditPage";
 import { GenrePage } from "./GenrePage/GenrePage";
 import { LanguageAllPage } from "./LanguageAllPage/LanguageAllPage";
 import { LanguageEditPage } from "./LanguageEditPage/LanguageEditPage";
