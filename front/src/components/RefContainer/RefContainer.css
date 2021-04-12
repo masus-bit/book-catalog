@@ -6,7 +6,7 @@
   flex-direction: column;
   background: var(--white);
   color: var(--text-black);
-  box-shadow: 0 0 12px var(--white);
+  box-shadow: 0 0 8px var(--white);
   border-radius: 12px;
   padding: 24px;
   &__wrapper{

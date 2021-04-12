@@ -60,7 +60,7 @@ export const PublisherForm: React.FC<Props> = ({ className = '', data }) => {
         className={b('field')}
         label={'Издательство'}
         name={'name'}
-        value={values.name}
+        value={data?.name}
         onChange={handleChange}
         error={errors?.name}
         disabled={loading}

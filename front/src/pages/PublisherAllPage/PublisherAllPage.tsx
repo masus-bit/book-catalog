@@ -24,7 +24,7 @@ export const PublisherAllPage: React.FC<Props> = ({ match }) => {
     [setSearch],
   )
 
-  const debounceHandlerChange = useCallback(debounce(handlerChange, 500), [
+  const debounceHandlerChange = useCallback(debounce(handlerChange, 300), [
     handlerChange,
   ])
 

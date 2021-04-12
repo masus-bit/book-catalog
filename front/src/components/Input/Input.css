@@ -1,8 +1,8 @@
 @import '../../assets/styles/colors.css';
 .input {
   &__input {
-    width: 250px;
-    height: 30px;
+    width: 256px;
+    height: 32px;
     border: 2px var(--bg-header) solid;
     border-radius: 5px;
 
@@ -10,7 +10,7 @@
     font-size: 20px;
   }
   &__container {
-    margin-top: 10px;
+    margin-top: 12px;
     display: flex;
     flex-direction: column;
   }
