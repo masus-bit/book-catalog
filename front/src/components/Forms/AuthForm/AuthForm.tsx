@@ -2,14 +2,15 @@ import React, { MouseEventHandler } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./AuthForm.css";
-import { AppState } from "../../store/app/types";
+import { AppState } from "../../../store/app/types";
 import block from "bem-cn";
-import { Auth } from "../../types/auth";
-import { Input } from "../Input/Input";
-import { Button } from "../Button/Button";
+import { Auth } from "../../../types/auth";
+import { Input } from "../../Input/Input";
+import { Button } from "../../Button/Button";
 import { connect, MapDispatchToProps, MapStateToProps } from "react-redux";
-import { RootState } from "../../store/types";
-import { appActions } from "../../store/app/actions";
+import { RootState } from "../../../store/types";
+import { appActions } from "../../../store/app/actions";
+import { ButtonType } from "../../Button/ButtonType";
 
 interface StateProps {
   loading: boolean;
@@ -70,7 +71,7 @@ const AuthFormPresenter: React.FC<Props> = ({ loading, errorText, appLogin }) =>
         name={"password"}
       />
       {!!errorText && <p className={"error"}>{errorText}</p>}
-      <Button htmlType={"submit"} text={"Войти"} onClick={handlerSubmit} />
+      <Button  type={ButtonType.Colorful} htmlType={"submit"} text={"Войти"} onClick={handlerSubmit} loading={loading} />
       <a href="/registration" className={b("reg-link")}>
         Регистрация
       </a>

@@ -1,0 +1,7 @@
+.single-item{
+    width: 100%;
+    border-bottom: 2px solid ;
+    &__name{
+        font-size: 2em;
+    }
+}

@@ -1,6 +1,6 @@
 import block from 'bem-cn'
 import React from 'react'
-import { RegistrationForm } from '../../components/RegistrationForm/RegistrationForm'
+import { RegistrationForm } from '../../components/Forms/RegistrationForm/RegistrationForm'
 
 interface Props{}
 const b= block('register-page')

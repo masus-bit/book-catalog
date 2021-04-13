@@ -1,0 +1,10 @@
+@import '../../../assets/styles/colors.css';
+.create-form{
+    display: flex;
+    flex-direction: column;
+    &__auth-link{
+        color:var(--link);
+        margin-top:20px;
+    }
+    align-items:center;
+}

@@ -1,15 +1,16 @@
-.input{
+@import '../../assets/styles/colors.css';
+.input {
   &__input {
-    width: 250px;
-    height: 30px;
-    border: 2px gray solid;
+    width: 256px;
+    height: 32px;
+    border: 2px var(--bg-header) solid;
     border-radius: 5px;
-    
+
+    outline: none;
     font-size: 20px;
-    
   }
-  &__container{
-    margin-top: 10px;
+  &__container {
+    margin-top: 12px;
     display: flex;
     flex-direction: column;
   }

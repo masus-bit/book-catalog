@@ -16,6 +16,7 @@ interface OwnProps {
   component: any;
   publicOnly?: boolean;
 }
+
 type Props = OwnProps & StateProps;
 
 const PagePresenter: React.FC<Props> = ({
@@ -33,12 +34,17 @@ const PagePresenter: React.FC<Props> = ({
   if (publicOnly && isAuth) {
     return <Redirect to={"/"} />;
   }
+
   return (
-    <Route exact={exact} path={path}>
-      <Layout>
-        <Component />
-      </Layout>
-    </Route>
+    <Route
+      exact={exact}
+      path={path}
+      render={(props) => (
+        <Layout>
+          <Component {...props} />
+        </Layout>
+      )}
+    />
   );
 };
 

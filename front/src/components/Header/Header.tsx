@@ -1,18 +1,21 @@
 import block from 'bem-cn'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import './Header.css'
-
+import { Link } from 'react-router-dom'
 interface Props {
+  rightBtn?:()=>ReactNode
 }
 
 const b = block('header')
 
-export const Header: React.FC<Props> = () => (
+export const Header: React.FC<Props> = ({rightBtn}) => (
   <header className={b()}>
-    <a className={b('title')}
-      href={'/'}
+    
+    <Link className={b('title')}
+      to={'/'}
     >
       Catalog
-    </a>
+    </Link>
+    {!!rightBtn && rightBtn()}
   </header>
 )

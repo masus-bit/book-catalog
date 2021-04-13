@@ -1,0 +1,19 @@
+@import '../../assets/styles/colors.css';
+.ref-container {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--white);
+  color: var(--text-black);
+  box-shadow: 0 0 8px var(--white);
+  border-radius: 12px;
+  padding: 24px;
+  &__wrapper{
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+}

@@ -1,0 +1,18 @@
+@import 'colors.css';
+
+:root{
+/* Button-colorful */
+--text-colorful-color:var(--black-color);
+--background-colorful-color:var(--white);
+--background-colorful-hover:var(--hover-btn);
+
+/* Button-monochrome */
+--text-monochrome-color:var(--black-color);
+--background-monochrome-color:var(--white);
+--text-monochrome-hover:var(--white);
+--background-monochrome-hover:var(--black-color);
+--box-shadow-monochrome-hover:var(--black-color);
+
+/* Button-logout */
+--background-logout-hover:var(--hover-logout)
+}

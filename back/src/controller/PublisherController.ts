@@ -20,6 +20,11 @@ export const publisherGetAll: App.Action<Publisher.List.Request> = async (req, r
 
   res.json(publishers)
 }
+export const publisherById: App.Action<Publisher.Single.Request> = async (req, res) => {
+  const language = await publisherRepository.getById(req.params.id)
+
+  res.json(language)
+}
 
 export const publisherCreate: App.Action<Publisher.Create.Request> = async (req, res) => {
   await schemaPublisherCreate.validate(req.body)

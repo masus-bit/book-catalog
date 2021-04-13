@@ -1,14 +1,16 @@
 import block from "bem-cn";
 import React, { MouseEventHandler } from "react";
-import { AppState } from "../../store/app/types";
+import { AppState } from "../../../store/app/types";
 import * as Yup from "yup";
-import { User } from "../../types/user";
+import { User } from "../../../types/user";
 import { useFormik } from "formik";
-import { Input } from "../Input/Input";
+import { Input } from "../../Input/Input";
 import { connect, MapDispatchToProps, MapStateToProps } from "react-redux";
-import { RootState } from "../../store/types";
-import { appActions } from "../../store/app/actions";
-import { Button } from "../Button/Button";
+import { RootState } from "../../../store/types";
+import { appActions } from "../../../store/app/actions";
+import { Button } from "../../Button/Button";
+import './RegistrationForm.css'
+import { ButtonType } from "../../Button/ButtonType";
 interface StateProps {
   loading: boolean;
   errorText: string;
@@ -98,7 +100,10 @@ const RegistrationFormPresenter: React.FC<Props> = ({ loading, errorText, appCre
       />
       {!!errorText && <p className={'error'}>{errorText}</p>}
       {!!successRegText && <p className={'success'}>{successRegText}</p>}
-      <Button text={"Зарегистрироваться"} htmlType={"submit"} onClick={handlerSubmit} />
+      <Button  type={ButtonType.Colorful} loading={loading}  text={"Зарегистрироваться"} htmlType={"submit"} onClick={handlerSubmit} />
+      <a href="/auth" className={b("auth-link")}>
+        Войти
+      </a>
     </form>
   );
 };

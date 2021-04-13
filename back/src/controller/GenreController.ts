@@ -12,6 +12,11 @@ export const genreGetAll: App.Action = async (req, res) => {
 
   res.json(genres)
 }
+export const genreById: App.Action<Genre.Single.Request> = async (req, res) => {
+  const genre = await genreRepository.getById(req.params.id)
+
+  res.json(genre)
+}
 
 export const genreCreate: App.Action<Genre.Create.Request> = async (req, res) => {
   await schemaGenreCreate.validate(req.body)
