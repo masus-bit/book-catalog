@@ -40,7 +40,7 @@ export const LanguageForm: React.FC<Props> = ({ className = "", data }) => {
           const res = await apiLanguagesCreate(fields);
           id = res.id;
         }
-        browserHistory.push(`/ref/languages/`);
+        browserHistory.push(`/ref/languages`);
       } catch (err) {
         setErrorText(err.message);
       } finally {

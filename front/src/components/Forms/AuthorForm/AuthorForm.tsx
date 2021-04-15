@@ -40,7 +40,7 @@ export const AuthorForm: React.FC<Props> = ({ className = "", data }) => {
           const res = await apiAuthorsCreate(fields);
           id = res.id;
         }
-        browserHistory.push(`/ref/authors/`);
+        browserHistory.push(`/ref/authors`);
       } catch (err) {
         setErrorText(err.message);
       } finally {

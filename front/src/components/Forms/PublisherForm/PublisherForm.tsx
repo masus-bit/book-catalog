@@ -40,7 +40,7 @@ export const PublisherForm: React.FC<Props> = ({ className = "", data }) => {
           const res = await apiPublishersCreate(fields);
           id = res.id;
         }
-        browserHistory.push(`/ref/publishers/`);
+        browserHistory.push(`/ref/publishers`);
       } catch (err) {
         setErrorText(err.message);
       } finally {
