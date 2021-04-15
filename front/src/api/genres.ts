@@ -23,3 +23,8 @@ export const apiGenresUpdate = async (
   const { data } = await ApiService(true).put<Genres.Data>(`/genres/`, params)
   return data
 }
+export const apiGenresDelete = async (
+  id: number,
+): Promise<void> => {
+  await ApiService(true).delete(`/genres/${id}`)
+}

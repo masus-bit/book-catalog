@@ -9,6 +9,7 @@ import { Button } from "../../components/Button/Button";
 import { browserHistory } from "../../browserHistory";
 import { LoadingIndicator } from "../../components/LoadingIndicator/LoadingIndicator";
 import { ButtonType } from "../../components/Button/ButtonType";
+import { apiGenresDelete } from "../../api/genres";
 
 const b = block("genre-page");
 interface Props extends BasePageProps {}
@@ -29,7 +30,7 @@ export const GenreAllPage: React.FC<Props> = ({ match }) => {
         )}
       >
         {loading && <LoadingIndicator size={"40px"} mLeft={"45%"} mTop={"100px"} />}
-        {data.length > 0 && !loading ? <RefList data={data} match={match} title={"Жанры"} /> : <p>Ничего не найдено</p>}
+        {data.length > 0 && !loading ? <RefList deleteRequest={apiGenresDelete} data={data} match={match} title={"Жанры"} /> : <p>Ничего не найдено</p>}
       </RefContainer>
     </div>
   );

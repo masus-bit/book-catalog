@@ -11,6 +11,7 @@ import { browserHistory } from '../../browserHistory'
 import { Button } from '../../components/Button/Button'
 import { LoadingIndicator } from '../../components/LoadingIndicator/LoadingIndicator'
 import { ButtonType } from '../../components/Button/ButtonType'
+import { apiPublishersDelete } from '../../api/publishers'
 
 const b = block('publisher-page')
 interface Props extends BasePageProps {}
@@ -49,7 +50,7 @@ export const PublisherAllPage: React.FC<Props> = ({ match }) => {
         )}
       >
         {loading && <LoadingIndicator size={'40px'} mLeft={'45%'} mTop={'100px'} />}
-        {!!data && <RefList match={match} data={data} title={'Издательства'} />}
+        {!!data && <RefList deleteRequest={apiPublishersDelete} match={match} data={data} title={'Издательства'} />}
       </RefContainer>
     </div>
   )

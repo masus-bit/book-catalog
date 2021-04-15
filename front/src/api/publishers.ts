@@ -36,3 +36,8 @@ export const apiPublishersUpdate = async (
   )
   return data
 }
+export const apiPublishersDelete = async (
+  id: number,
+): Promise<void> => {
+  await ApiService(true).delete(`/publishers/${id}`)
+}

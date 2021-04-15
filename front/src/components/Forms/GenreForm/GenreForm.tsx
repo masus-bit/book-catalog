@@ -40,7 +40,7 @@ export const GenreForm: React.FC<Props> = ({ className = "", data }) => {
           const res = await apiGenresCreate(fields);
           id = res.id;
         }
-        browserHistory.push(`/ref/genres/${id}`);
+        browserHistory.push(`/ref/genres/`);
       } catch (err) {
         setErrorText(err.message);
       } finally {
