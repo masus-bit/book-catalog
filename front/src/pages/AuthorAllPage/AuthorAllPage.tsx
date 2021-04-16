@@ -11,6 +11,7 @@ import { Button } from "../../components/Button/Button";
 import { browserHistory } from "../../browserHistory";
 import { LoadingIndicator } from "../../components/LoadingIndicator/LoadingIndicator";
 import { ButtonType } from "../../components/Button/ButtonType";
+import { apiAuthorsDelete } from "../../api/authors";
 
 const b = block("author-page");
 interface Props extends BasePageProps {}
@@ -39,7 +40,7 @@ export const AuthorAllPage: React.FC<Props> = ({ match }) => {
         leftElement={() => <Input htmlType={"text"} onChange={debounceHandlerChange} label={"Поиск по имени"} />}
       >
         {loading && <LoadingIndicator size={"40px"} mLeft={"45%"} mTop={"100px"} />}
-        {!!data && <RefList data={data} match={match} title={"Авторы"} />}
+        {!!data && <RefList deleteRequest={apiAuthorsDelete} data={data} match={match} title={"Авторы"} />}
       </RefContainer>
     </div>
   );

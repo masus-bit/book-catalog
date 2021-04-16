@@ -8,7 +8,11 @@ export declare namespace Authors {
       name:string
     }
   }
-  
+  namespace Delete{
+    interface Params{
+      id:number
+    }
+  }
   namespace All {
     interface Search {
       search?: string;

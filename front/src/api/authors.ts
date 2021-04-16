@@ -1,7 +1,7 @@
 import { ApiService } from '../services/ApiService'
 import { Authors } from '../types/authors'
 
-export const apiAughorsGetAll = async (params:Authors.All.Search): Promise<Authors.Data[]> => {
+export const apiAughorsGetAll = async (params?:Authors.All.Search): Promise<Authors.Data[]> => {
   const { data } = await ApiService(true).get<Authors.Data[]>(`/authors`, {params})
   return data
 }
@@ -22,4 +22,9 @@ export const apiAuthorsUpdate = async (
 ): Promise<Authors.Data> => {
   const { data } = await ApiService(true).put<Authors.Data>(`/authors/`, params)
   return data
+}
+export const apiAuthorsDelete = async (
+  id: number,
+): Promise<void> => {
+  await ApiService(true).delete(`/authors/${id}`)
 }

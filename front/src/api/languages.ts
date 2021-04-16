@@ -23,3 +23,8 @@ export const apiLanguagesUpdate = async (
   const { data } = await ApiService(true).put<Languages.Data>(`/languages/`, params)
   return data
 }
+export const apiLanguagesDelete = async (
+  id: number,
+): Promise<void> => {
+  await ApiService(true).delete(`/languages/${id}`)
+}
